@@ -1,0 +1,33 @@
+# build tools
+*.tsbuildinfo
+.webpack/
+
+
+### IDEs: VisualStudioCode -  WebStorm - sublime ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+.history
+.ionide
+
+.idea/
+
+*.sublime*
+
+### yarn ###
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
+.pnp.*
+
+# Dependency directories
+node_modules
+node_modules/
