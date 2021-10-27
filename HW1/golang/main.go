@@ -34,7 +34,7 @@ func main() {
 		if err == redis.Nil {
 			c.JSON(404, gin.H{
 				"status": "error",
-				"error": "Not found"
+				"error": "Not found",
 			})
 			return
 		} else if err != nil {
@@ -78,5 +78,5 @@ func main() {
 			"message": message,
 		})
 	})
-	r.Run(":8080") // listen and serve on 0.0.0.0:8080
+	r.Run(":7000") // listen and serve on 0.0.0.0:8080
 }

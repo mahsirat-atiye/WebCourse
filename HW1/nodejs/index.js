@@ -11,7 +11,7 @@ const port = 3000
 // Support parsing of json data in POST requests
 app.use(bodyParser.json())
 
-app.post('/', async (req, res) => {
+app.post('/sha256', async (req, res) => {
 
     client.on('error', (err) => console.log('Redis Client Error', err));
     client.on('connect', (err) => console.log('Redis connection established!'));
@@ -20,7 +20,7 @@ app.post('/', async (req, res) => {
     console.log(message)
     // Check if plain text is 8 characters
     if (message.length >= 8) {
-npm
+
         var hashed_txt = crypto.createHash('sha256').update(message).digest('hex');
         console.log(hashed_txt)
 
@@ -46,7 +46,7 @@ npm
 
 })
 
-app.get('/', async (req, res) => {
+app.get('/sha256', async (req, res) => {
 
     let id = await req.query.id
     await client.get(id, (err, reply) => {
