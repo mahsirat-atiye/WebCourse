@@ -34,7 +34,7 @@ func main() {
 		if err == redis.Nil {
 			c.JSON(404, gin.H{
 				"status": "error",
-				"error": "Not found"
+				"error":  "Not found",
 			})
 			return
 		} else if err != nil {
