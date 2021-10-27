@@ -16,7 +16,7 @@ app.post('/sha256', async (req, res) => {
     client.on('error', (err) => console.log('Redis Client Error', err));
     client.on('connect', (err) => console.log('Redis connection established!'));
 
-    var message = req.body.message;
+    var message = await req.body.message;
     console.log(message)
     // Check if plain text is 8 characters
     if (message.length >= 8) {

@@ -75,7 +75,7 @@
         ).catch(({ response: {data: result} }) => {
           postForm.querySelector(".text-danger").innerText = "error: " + result.error
         }).then(({ data: result }) => {
-          postForm.querySelector(".text-success").innerText = "message: " + result.message
+          postForm.querySelector(".text-success").innerText = "id: " + result.id
         });
       }
 

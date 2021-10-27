@@ -5,6 +5,7 @@ cd /etc/nginx/sites-enabled
 sudo nano web
 ```
 copy the content of config in `web` file, and save
+change root `root /home/Phanous/PycharmProjects/web/HW1/front;`
 ```angular2html
 sudo systemctl restart nginx.service 
 ```

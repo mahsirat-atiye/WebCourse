@@ -38,6 +38,15 @@ server {
     }
 
 
+        root /home/Phanous/PycharmProjects/web/HW1/front;
+        index index.html;
+
+        location / {
+                            try_files $uri $uri/ =404;
+        }
+
+
+
     gzip on;
     gzip_disable "msie6";
     gzip_vary on;
