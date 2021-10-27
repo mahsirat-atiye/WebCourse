@@ -1,1 +1,19 @@
 # Golang Backend
+## Setup project
+```angular2html
+cd web/HW1/golang
+go run main.go
+```
+
+
+## Model structure
+- Message: plain text
+- ID: hashed text
+
+## API structure
+```angular2html
+"status": "error/success",
+"error": "not found/error",
+"id":      id,
+"message": message
+```

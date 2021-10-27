@@ -33,8 +33,8 @@ func main() {
 		message, err := client.Get(ctx, id).Result()
 		if err == redis.Nil {
 			c.JSON(404, gin.H{
-				"status": "not found",
-				"id":     id,
+				"status": "error",
+				"error": "Not found"
 			})
 			return
 		} else if err != nil {
@@ -45,7 +45,7 @@ func main() {
 			panic(err)
 		}
 		c.JSON(200, gin.H{
-			"status":  "getted",
+			"status":  "success",
 			"id":      id,
 			"message": message,
 		})
@@ -73,7 +73,7 @@ func main() {
 			panic(err)
 		}
 		c.JSON(200, gin.H{
-			"status":  "posted",
+			"status":  "success",
 			"id":      id,
 			"message": message,
 		})

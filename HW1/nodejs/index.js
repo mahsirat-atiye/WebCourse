@@ -16,27 +16,29 @@ app.post('/', async (req, res) => {
     client.on('error', (err) => console.log('Redis Client Error', err));
     client.on('connect', (err) => console.log('Redis connection established!'));
 
-    var plain_text = req.body.plain_text;
-    console.log(plain_text)
+    var message = req.body.message;
+    console.log(message)
     // Check if plain text is 8 characters
-    if (plain_text.length >= 8) {
-
-        var hashed_txt = crypto.createHash('sha256').update(plain_text).digest('hex');
+    if (message.length >= 8) {
+npm
+        var hashed_txt = crypto.createHash('sha256').update(message).digest('hex');
         console.log(hashed_txt)
 
-        client.set(hashed_txt, plain_text, (err, reply) => {
+        client.set(hashed_txt, message, (err, reply) => {
             if (err) throw err;
             console.log(reply);
             res.statusCode = 200
             return res.send({
-                "plain_text": plain_text,
-                "hashed_text": hashed_txt
+                "status": "success",
+                "message": message,
+                "id": hashed_txt
             })
 
         });
     } else {
         res.statusCode = 400
         return res.send({
+            "status":"error",
             "error": "Plain text should be at least 8 characters",
         })
     }
@@ -46,19 +48,21 @@ app.post('/', async (req, res) => {
 
 app.get('/', async (req, res) => {
 
-    let hashed_text = await req.query.hashed_text
-    await client.get(hashed_text, (err, reply) => {
+    let id = await req.query.id
+    await client.get(id, (err, reply) => {
         if (err) throw err;
         console.log(reply);
         if (reply == null) {
             res.statusCode = 404;
             return res.send({
+                "status" : "error",
                 "error": "Not found"
             })
         } else {
             res.statusCode = 200;
             return res.send({
-                "plain_text": reply
+                "status":"success",
+                "message": reply
             })
         }
     });
