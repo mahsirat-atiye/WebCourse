@@ -27,6 +27,18 @@ const style = css`
     padding-top: 100px;
     background: #3c31dd;
   }
+
+  #header:after {
+    content: "";
+    width: 100%;
+    transform: scaleY(0.5);
+    transform-origin: bottom;
+    position: absolute;
+    bottom: 0;
+    height: 250px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 250' fill='%23fff'%3E%3Cpath d='m0 256 48-42.7C96 171 192 85 288 80s192 69 288 112 192 53 288 32 192-75 288-101.3C1248 96 1344 96 1392 96h48v224H0z' /%3E%3C/svg%3E%0A") bottom / cover;
+    background-repeat: no-repeat;
+  }
   .banner-content {
     width: 40%;
     margin: auto;
@@ -44,7 +56,6 @@ element.innerHTML = html`
       تغیر رنگ
     </button>
   </div>
-  <div class="curve"></div>
 `;
 
 changeColor();
