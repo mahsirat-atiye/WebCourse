@@ -40,8 +40,7 @@ element.innerHTML = html`
                 </a>
               </li>
             `
-          )
-          .join("")}
+          )}
       </ul>
     </div>
   </div>
