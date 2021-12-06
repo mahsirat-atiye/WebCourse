@@ -1,6 +1,9 @@
-
 body {
-  font-family: 'Vazir FD UI', sans-serif;
+  font-family: "Vazir FD UI", sans-serif;
+}
+
+article {
+  margin: 1rem 0;
 }
 
 .flex {
