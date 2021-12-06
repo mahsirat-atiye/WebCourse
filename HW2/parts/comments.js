@@ -34,13 +34,11 @@ const style = css`
   }
 
   .prev {
-    background-image: url(assets/chevron_left_icon.png);
-    left: -50px;
+    background-image: url("assets/chevron_left_icon.png");
   }
 
   .next {
-    background-image: url(assets/chevron_right_icon.png);
-    right: -50px;
+    background-image: url("assets/chevron_right_icon.png");
   }
 
   .prev:active,
@@ -53,54 +51,28 @@ const lorem =
   "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ";
 element.innerHTML = html`
   ${style}
-  <div class="container mb-3" style="max-width: 540px;">
-    <div
-      id="carouselExampleControls"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
+  <div class="mb-3">
+    <div id="comments-crasual" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card mb-3" style="max-width: 600px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  src="assets/commenter1.jpeg"
-                  class="img-fluid rounded-start"
-                  alt="..."
-                />
-              </div>
-              <div class="col-md-8">
+        ${["assets/commenter1.jpeg", "assets/commenter2.jpeg"].map(
+          (src, index) => html`
+            <div class="carousel-item ${index === 0 ? "active" : ""}">
+              <!-- <div class="card mb-3" style="max-width: 500px;"> -->
+              <div class="flex items-center">
+                <img src="${src}" class="img-fluid rounded-start" alt="..." />
                 <div class="card-body">
                   <p>${lorem}</p>
                 </div>
               </div>
+              <!-- </div> -->
             </div>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <div class="card mb-3" style="max-width: 600px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  src="assets/commenter2.jpeg"
-                  class="img-fluid rounded-start"
-                  alt="..."
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <p>${lorem}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          `
+        )}
       </div>
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleControls"
+        data-bs-target="#comments-crasual"
         data-bs-slide="prev"
       >
         <span class="control prev "></span>
@@ -108,7 +80,7 @@ element.innerHTML = html`
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleControls"
+        data-bs-target="#comments-crasual"
         data-bs-slide="next"
       >
         <span class="control next "></span>

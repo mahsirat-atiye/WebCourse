@@ -2,3 +2,11 @@
 body {
   font-family: 'Vazir FD UI', sans-serif;
 }
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
