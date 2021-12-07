@@ -8,6 +8,7 @@ element.innerHTML = html`
   ${style}
   <div dir="ltr" class="container-fluid">
     <a class="bg-warning text-black rounded-3 navbar-brand px-5" href="#">لوگو</a>
+    <button class="btn bg-light text-dark toggle-button">تغیر تم</button>
     <button
       class="navbar-toggler"
       type="button"
@@ -45,3 +46,9 @@ element.innerHTML = html`
     </div>
   </div>
 `;
+
+
+element.querySelector('.toggle-button').onclick = function toggleTheme() {
+  element.classList.toggle('navbar-dark')
+  document.documentElement.classList.toggle('inverted')
+}

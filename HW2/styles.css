@@ -1,5 +1,7 @@
 body {
   font-family: "Vazir FD UI", sans-serif;
+  --bs-body-color: var(--bs-dark);
+  --bs-body-bg: var(--bs-light);
 }
 
 article:not(#footer) {
@@ -12,4 +14,16 @@ article:not(#footer) {
 
 .items-center {
   align-items: center;
+}
+
+:root.inverted {
+  --bs-white: #000;
+  --bs-black: #fff;
+  --bs-white-rgb: 0, 0, 0;
+  --bs-black-rgb: 255, 255, 255;
+
+  --bs-light: #212529;
+  --bs-dark: #f8f9fa;
+  --bs-light-rgb: 33, 37, 41;
+  --bs-dark-rgb: 248, 249, 250;
 }
