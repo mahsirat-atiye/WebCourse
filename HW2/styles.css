@@ -2,8 +2,8 @@ body {
   font-family: "Vazir FD UI", sans-serif;
 }
 
-article {
-  margin: 1rem 0;
+article:not(#footer) {
+  margin-top: 3rem;
 }
 
 .flex {

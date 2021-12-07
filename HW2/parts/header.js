@@ -40,7 +40,7 @@ const style = css`
     background-repeat: no-repeat;
     pointer-events: none;
   }
-  .banner-content {
+  #header .banner-content {
     width: 40%;
     margin: auto;
   }
