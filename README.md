@@ -1,1 +1,1 @@
-# web
+# Frontend Web Course Exercises
